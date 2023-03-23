@@ -4,4 +4,4 @@
 
 Ссылка: https://vladpantyukhin.github.io/my-notifications/
 
-![Design](https://github.com/vladpantyukhin/my-notifications/blob/main/img/desing.png)
+![Design](https://github.com/vladpantyukhin/my-notifications/blob/main/img/screenshot.png)
