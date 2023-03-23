@@ -82,7 +82,7 @@ setInterval(() =>{
     if(key == currentTime || (keyHour == currentHour && keyMinute < currentMinute)){
       document.querySelector(`button[data-time="${key}"]`).closest('.notification__item').classList.add('notification__warning')
       if(!document.querySelector('.audioAlert')){
-        document.querySelector('body').insertAdjacentHTML('afterbegin', '<audio loop class="audioAlert"><source src="../source/alert.mp3" type="audio/mpeg"</audio>')
+        document.querySelector('body').insertAdjacentHTML('afterbegin', '<audio loop class="audioAlert"><source src="./source/alert.mp3" type="audio/mpeg"</audio>')
         document.querySelector('.audioAlert').play()
       }
     }

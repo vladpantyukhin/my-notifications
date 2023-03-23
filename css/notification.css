@@ -135,7 +135,15 @@ body {
 }
 .notification__warning {
   background-color: #FFD17A;
+  animation: blinker 2s linear infinite;
 }
+
+@keyframes blinker {
+  10% {
+    opacity: 0.6;
+  }
+}
+
 button[data-time] {
   display: flex;
   justify-content: center;
