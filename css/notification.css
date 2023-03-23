@@ -25,7 +25,7 @@ body {
   max-width: 25px;
   cursor: pointer;
 }
-.notification__header h2 {
+.notification__header h1 {
   margin: 0;
   font-size: 14px;
   margin: 0;
@@ -130,11 +130,8 @@ body {
 .notification__item > div{
   align-self: center;
 }
-.notification__item:nth-last-child(-n+2){
-  margin-bottom: 30px;
-}
 .notification__item:last-child {
-  display: none;
+  margin-bottom: 30px;
 }
 .notification__warning {
   background-color: #FFD17A;

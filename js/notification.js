@@ -88,23 +88,3 @@ setInterval(() =>{
     }
   }
 }, 1000)
-
-let icon = document.querySelector('.theme-icon');
-
-    if(localStorage.getItem('theme-dark') == 'true'){
-      theme.setAttribute('href', '../css/notification-dark.css')
-      icon.setAttribute('src', '../img/sun.svg')
-      icon.click = true
-    }
-
-    icon.onclick = function(){
-      if(this.click){
-        localStorage.setItem('theme-dark', true)
-        theme.setAttribute('href', '../css/notification-dark.css')
-        icon.setAttribute('src', '../img/sun.svg')
-      } else{
-        localStorage.setItem('theme-dark', false)
-        theme.setAttribute('href', '../css/notification.css')
-        icon.setAttribute('src', '../img/night.svg')
-      }
-    }
