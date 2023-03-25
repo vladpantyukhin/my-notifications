@@ -46,6 +46,9 @@ document.querySelector('.notification__list > button').addEventListener('click',
 
 function update() {
   const timeFormat = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
+  localStorage.removeItem(
+    Object.keys(localStorage).filter((element) => /^[a-zA-Z]+$/.test(element)),
+  );
 
   if (!localStorage.length) {
     document.querySelector('.notification__list').hidden = true;
