@@ -3,7 +3,6 @@ update();
 document.querySelector('.notification__form button').addEventListener('click', function () {
   let time = document.querySelector('.notification__form input').value;
   let message = document.querySelector('.notification__form textarea').value;
-
   let info = document.querySelector('.notification__info');
 
   if (!time || !message) {
@@ -46,6 +45,8 @@ document.querySelector('.notification__list > button').addEventListener('click',
 });
 
 function update() {
+  const timeFormat = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
+
   if (!localStorage.length) {
     document.querySelector('.notification__list').hidden = true;
   } else {
@@ -53,7 +54,10 @@ function update() {
   }
   document.querySelector('.notification__list > div').innerHTML = '';
   document.querySelector('.notification__info').textContent = '';
-  for (let key of Object.keys(localStorage)) {
+
+  for (let key of Object.keys(localStorage)
+    .sort()
+    .filter((element) => timeFormat.test(element))) {
     document.querySelector('.notification__list > div').insertAdjacentHTML(
       'beforeend',
       `
@@ -90,7 +94,11 @@ setInterval(() => {
     currentMinute = '0' + currentMinute;
   }
   let currentTime = `${currentHour}:${currentMinute}`;
-  for (let key of Object.keys(localStorage)) {
+  const timeFormat = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
+
+  for (let key of Object.keys(localStorage)
+    .sort()
+    .filter((element) => timeFormat.test(element))) {
     let keyHour = key.split(':')[0];
     let keyMinute = key.split(':')[1];
 
