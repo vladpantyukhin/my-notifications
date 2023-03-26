@@ -4,4 +4,8 @@
 
 Ссылка: https://vladpantyukhin.github.io/my-notifications/
 
-![Design](https://github.com/vladpantyukhin/my-notifications/blob/main/img/screenshot.png)
+![Screen](https://github.com/vladpantyukhin/my-notifications/blob/main/img/screenshot.png)
+
+![ScreenAdd](https://github.com/vladpantyukhin/my-notifications/blob/main/img/screen-add.png)
+
+![ScreenClear](https://github.com/vladpantyukhin/my-notifications/blob/main/img/screen-clear.png)
