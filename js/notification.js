@@ -115,7 +115,7 @@ setInterval(() => {
           .querySelector('body')
           .insertAdjacentHTML(
             'afterbegin',
-            '<audio loop class="audioAlert"><source src="./source/alert.mp3" type="audio/mpeg"</audio>',
+            '<audio loop class="audioAlert" autoplay><source src="./source/alert.mp3" type="audio/mpeg"</audio>',
           );
         document.querySelector('.audioAlert').play();
       }
