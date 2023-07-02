@@ -6,7 +6,7 @@ document.querySelector('.notification__form button').addEventListener('click', f
   let info = document.querySelector('.notification__info');
 
   if (!time || !message) {
-    info.textContent = '* добавьте время и сообщение';
+    info.textContent = '* добавьте время и задачу';
     info.style.opacity = 1;
     setTimeout(() => {
       info.style.opacity = 0;
@@ -18,13 +18,13 @@ document.querySelector('.notification__form button').addEventListener('click', f
   }
   localStorage.setItem(time, message);
   update();
-  Swal.fire('Уведомление добавлено!', '', 'success');
+  Swal.fire('Задача добавлена!', '', 'success');
 });
 
 document.querySelector('.notification__list > button').addEventListener('click', function () {
   if (localStorage.length) {
     Swal.fire({
-      title: 'Очистить список уведомлений?',
+      title: 'Очистить список задач?',
       text: '',
       icon: 'warning',
       showCancelButton: true,
@@ -33,14 +33,14 @@ document.querySelector('.notification__list > button').addEventListener('click',
       confirmButtonText: 'ОК',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Удалено!', 'Вы очистили список уведомлений', 'success');
+        Swal.fire('Удалено!', 'Вы очистили список задач', 'success');
         localStorage.clear();
         update();
         document.querySelector('.notification__list').hidden = true;
       }
     });
   } else if (!localStorage.length) {
-    alert('Уведомлений нет!');
+    alert('Задач нет!');
   }
 });
 
@@ -73,9 +73,6 @@ function update() {
   }
   document.querySelector('.notification__form input').value = '';
   document.querySelector('.notification__form textarea').value = '';
-  if (document.querySelector('.audioAlert')) {
-    document.querySelector('.audioAlert').remove();
-  }
 }
 
 document.querySelector('.notification__list').addEventListener('click', function (e) {
@@ -110,15 +107,6 @@ setInterval(() => {
         .querySelector(`button[data-time="${key}"]`)
         .closest('.notification__item')
         .classList.add('notification__warning');
-      if (!document.querySelector('.audioAlert')) {
-        document
-          .querySelector('body')
-          .insertAdjacentHTML(
-            'afterbegin',
-            '<audio loop class="audioAlert" autoplay><source src="./source/alert.mp3" type="audio/mpeg"</audio>',
-          );
-        document.querySelector('.audioAlert').play();
-      }
     }
   }
 }, 1000);
